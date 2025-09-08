@@ -1,3 +1,5 @@
+git submodule update
+
 mkdir -p ./external/lib ./external/include
 pushd ssmem 
 make libssmem.a
@@ -10,7 +12,4 @@ make
 cp libsspfd.a ../external/lib/
 cp sspfd.h ../external/include/
 popd
-
-echo "building lock free version of clht" 
-make libclht_lf.a
 
