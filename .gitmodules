@@ -1,0 +1,6 @@
+[submodule "ssmem"]
+	path = ssmem
+	url = https://github.com/LPD-EPFL/ssmem.git
+[submodule "sspfd"]
+	path = sspfd
+	url = https://github.com/trigonak/sspfd.git
