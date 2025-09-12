@@ -143,11 +143,7 @@ clht_hashtable_t* clht_hashtable_create(uint64_t num_buckets) {
 
   /* hashtable->table = calloc(num_buckets, (sizeof(bucket_t))); */
   uint64_t sz = num_buckets * (sizeof(bucket_t));
-  if (sz < (1024 * 1024 * 1024)) {
-    hashtable->table = (bucket_t*)memalign(CACHE_LINE_SIZE, sz);
-  } else {
-    hashtable->table = (bucket_t*)hp_alloc(sz);
-  }
+  hashtable->table = (bucket_t*)memalign(CACHE_LINE_SIZE, sz);
 
   if (hashtable->table == NULL) {
     printf("** alloc: hashtable->table\n");
